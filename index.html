@@ -126,6 +126,378 @@
         .highlight {
             color: var(--primary-color);
         }
+
+        /* AV Matchmaker Section */
+        .av-matchmaker {
+            padding: 6rem 0;
+            background-color: var(--darker-bg);
+            position: relative;
+        }
+
+        .matchmaker-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .matchmaker-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .matchmaker-header p {
+            color: var(--medium-text);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .matchmaker-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .matchmaker-stage {
+            padding: 2rem;
+        }
+
+        .matchmaker-nav {
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 1rem 2rem;
+        }
+
+        .matchmaker-step {
+            display: flex;
+            align-items: center;
+            margin-right: 2rem;
+            position: relative;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .matchmaker-step.active {
+            opacity: 1;
+        }
+
+        .step-number {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-right: 0.8rem;
+        }
+
+        .step-title {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Step 1: Project Requirements */
+        .project-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group select,
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background-color: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            color: var(--light-text);
+            font-size: 1rem;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-item input {
+            margin-right: 0.5rem;
+            width: auto;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-buttons {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1rem;
+        }
+
+        /* Step 2: Feature Preferences */
+        .feature-card {
+            background: linear-gradient(135deg, rgba(0, 194, 255, 0.1), rgba(112, 0, 255, 0.1));
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .feature-question {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .preference-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .preference-option {
+            padding: 1rem;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .preference-option:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .preference-option.selected {
+            background-color: rgba(0, 194, 255, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        .option-label {
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .option-desc {
+            font-size: 0.85rem;
+            color: var(--medium-text);
+        }
+
+        .feature-progress {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .progress-text {
+            font-size: 0.9rem;
+            color: var(--medium-text);
+        }
+
+        .progress-dots {
+            display: flex;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 0 3px;
+        }
+
+        .dot.active {
+            background-color: var(--primary-color);
+        }
+
+        /* Step 3: Results */
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .main-result {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(0, 194, 255, 0.15), rgba(112, 0, 255, 0.15));
+            border-radius: 10px;
+            padding: 2rem;
+            border: 1px solid rgba(0, 194, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .match-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .result-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .result-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .match-percentage {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .result-description {
+            margin-bottom: 1.5rem;
+            color: var(--light-text);
+        }
+
+        .result-features {
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-check {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .alternate-result {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .alt-result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .alt-result-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .alt-match-percentage {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .alt-result-description {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: var(--medium-text);
+        }
+
+        .result-cta {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .email-form {
+            max-width: 500px;
+            margin: 2rem auto 0;
+            padding: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .email-form-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .email-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .email-inputs .form-group:last-child {
+            grid-column: 1 / -1;
+        }
+
+        .email-disclaimer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--medium-text);
+            margin-top: 1rem;
+        }
         
         /* Services Section */
         .services {
@@ -361,6 +733,22 @@
             .nav-links {
                 display: none;
             }
+
+            .project-form {
+                grid-template-columns: 1fr;
+            }
+
+            .preference-options {
+                grid-template-columns: 1fr;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .email-inputs {
+                grid-template-columns: 1fr;
+            }
         }
         
         /* Mobile Navigation */
@@ -407,6 +795,7 @@
         <a href="#" class="logo">SYSTEM DESIGNER UK</a>
         <button class="mobile-menu-btn">☰</button>
         <ul class="nav-links">
+            <li><a href="#av-matchmaker">AV Matchmaker</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
@@ -421,221 +810,261 @@
             <div class="hero-content">
                 <h1>Premium <span class="highlight">Audio-Visual</span> System Design & Programming</h1>
                 <p>Specialized remote solutions for venues, events, and corporate environments across the United Kingdom.</p>
-                <a href="#contact" class="btn">Request Consultation</a>
+                <a href="#av-matchmaker" class="btn">Find Your Perfect AV Match</a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <!-- AV System Matchmaker -->
+    <section id="av-matchmaker" class="av-matchmaker">
         <div class="container">
-            <div class="section-header">
-                <h2>Our <span class="highlight">Services</span></h2>
-                <p>We deliver specialized remote audio-visual solutions with technical expertise, allowing for efficient collaboration, reduced costs, and professional results.</p>
+            <div class="matchmaker-header">
+                <h2>Find Your <span class="highlight">Perfect</span> AV System</h2>
+                <p>Answer a few questions about your project needs and we'll match you with the ideal audio-visual solution.</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>AV System Design</h3>
-                    <p>Professional audio-visual system planning with comprehensive AutoCAD documentation, ensuring optimal equipment placement, signal flow, and user experience.</p>
-                    <a href="#" class="btn">Learn More</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔊</div>
-                    <h3>QSys Programming</h3>
-                    <p>Expert QSys DSP programming for sophisticated audio networking solutions, custom control interfaces, and advanced audio processing.</p>
-                    <a href="#" class="btn">Learn More</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📺</div>
-                    <h3>Media Server & Show Control</h3>
-                    <p>Specialized programming for media servers and show control systems, enabling synchronized multi-display presentations and complex event automation.</p>
-                    <a href="#" class="btn">Learn More</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💻</div>
-                    <h3>Remote Consultations</h3>
-                    <p>Professional troubleshooting and optimization of existing AV systems to identify inefficiencies, resolve technical issues, and enhance performance.</p>
-                    <a href="#" class="btn">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our <span class="highlight">Portfolio</span></h2>
-                <p>Explore our recent projects showcasing our expertise in audio-visual system design and programming.</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="images/portfolio-1.jpg" alt="Conference Center AV System" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Conference Center AV System</h3>
-                        <p>Complete design and QSys programming for a multi-room conference facility.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="images/portfolio-2.jpg" alt="Corporate Auditorium" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Corporate Auditorium</h3>
-                        <p>Integrated media server and display control for executive presentations.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="images/portfolio-3.jpg" alt="Museum Audio Experience" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Museum Audio Experience</h3>
-                        <p>Interactive audio installations with synchronized control systems.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="images/portfolio-4.jpg" alt="Live Event Production" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Live Event Production</h3>
-                        <p>Show control programming for a touring production with multiple media feeds.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>Client <span class="highlight">Testimonials</span></h2>
-                <p>What our clients say about our audio-visual design and programming services.</p>
-            </div>
-            <div class="testimonial-slider">
-                <div class="testimonial">
-                    <p>"System Designer UK transformed our outdated AV setup into a state-of-the-art system that's both powerful and easy to use. Their remote consultation saved us valuable time and resources."</p>
-                    <div class="testimonial-author">James Wilson</div>
-                    <div class="testimonial-position">Technical Director, London Conference Center</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get In <span class="highlight">Touch</span></h2>
-                <p>Have a project in mind? Let's discuss how we can help with your audio-visual needs.</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p>Our team of specialists is ready to assist you with any audio-visual system design or programming needs. Reach out to discuss your project requirements.</p>
-                    <p>Email: info@systemdesigneruk.com</p>
-                    <p>Phone: +44 123 456 7890</p>
-                </div>
-                <form class="contact-form" action="https://formspree.io/f/xeoeyaby" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <input type="text" name="subject" placeholder="Subject">
-                    <textarea name="message" placeholder="Tell us about your project..." required></textarea>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3>System Designer UK</h3>
-                    <p>Specialized remote audio-visual solutions for venues, events, and corporate environments across the United Kingdom.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">AV System Design</a></li>
-                        <li><a href="#">QSys Programming</a></li>
-                        <li><a href="#">Media Server & Show Control</a></li>
-                        <li><a href="#">Remote Consultations</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Stay Connected</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">YouTube</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 System Designer UK. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Navigation scroll effect
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('nav-scrolled');
-            } else {
-                nav.classList.remove('nav-scrolled');
-            }
-        });
-
-        // Mobile menu toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            // Check if the elements exist before adding event listeners
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
             
-            if (mobileMenuBtn && navLinks) {
-                mobileMenuBtn.addEventListener('click', function() {
-                    navLinks.classList.toggle('active');
-                });
+            <div class="matchmaker-container">
+                <div class="matchmaker-nav">
+                    <div class="matchmaker-step active" id="step1-indicator">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Project Details</div>
+                    </div>
+                    <div class="matchmaker-step" id="step2-indicator">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Preferences</div>
+                    </div>
+                    <div class="matchmaker-step" id="step3-indicator">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Your Matches</div>
+                    </div>
+                </div>
                 
-                // Close mobile menu when clicking a link
-                const links = document.querySelectorAll('.nav-links a');
-                links.forEach(link => {
-                    link.addEventListener('click', function() {
-                        navLinks.classList.remove('active');
-                    });
-                });
-            }
-            
-            // Smooth scrolling for anchor links
-            const anchors = document.querySelectorAll('a[href^="#"]:not([href="#"])');
-            anchors.forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
+                <!-- Step 1: Project Requirements -->
+                <div class="matchmaker-stage" id="step1">
+                    <form class="project-form">
+                        <div class="form-group">
+                            <label for="venue-type">What type of venue is this for?</label>
+                            <select id="venue-type" required>
+                                <option value="">Select venue type...</option>
+                                <option value="corporate">Corporate</option>
+                                <option value="education">Education</option>
+                                <option value="hospitality">Hospitality</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="retail">Retail</option>
+                                <option value="worship">House of Worship</option>
+                                <option value="government">Government</option>
+                                <option value="healthcare">Healthcare</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="room-size">What is the room size/capacity?</label>
+                            <select id="room-size" required>
+                                <option value="">Select room size...</option>
+                                <option value="small">Small (up to 10 people)</option>
+                                <option value="medium">Medium (11-30 people)</option>
+                                <option value="large">Large (31-100 people)</option>
+                                <option value="very-large">Very Large (100+ people)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">What is your approximate budget?</label>
+                            <select id="budget" required>
+                                <option value="">Select budget range...</option>
+                                <option value="budget">Budget-friendly (under £10,000)</option>
+                                <option value="mid-range">Mid-range (£10,000 - £30,000)</option>
+                                <option value="premium">Premium (£30,000 - £100,000)</option>
+                                <option value="enterprise">Enterprise (£100,000+)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="timeline">Project timeline</label>
+                            <select id="timeline" required>
+                                <option value="">Select timeline...</option>
+                                <option value="urgent">Urgent (within 1 month)</option>
+                                <option value="standard">Standard (1-3 months)</option>
+                                <option value="planned">Planned (3-6 months)</option>
+                                <option value="future">Future planning (6+ months)</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>How will the space be used? (Select all that apply)</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="use-video-conf" name="usage[]" value="video-conf">
+                                    <label for="use-video-conf">Video conferencing</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="use-presentations" name="usage[]" value="presentations">
+                                    <label for="use-presentations">Presentations</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="use-training" name="usage[]" value="training">
+                                    <label for="use-training">Training/Education</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="use-client" name="usage[]" value="client">
+                                    <label for="use-client">Client-facing meetings</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="use-collab" name="usage[]" value="collaboration">
+                                    <label for="use-collab">Team collaboration</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="use-signage" name="usage[]" value="signage">
+                                    <label for="use-signage">Digital signage</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="use-events" name="usage[]" value="events">
+                                    <label for="use-events">Live events/performances</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="use-interactive" name="usage[]" value="interactive">
+                                    <label for="use-interactive">Interactive experiences</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" class="btn" id="step1-next">Next: Feature Preferences</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Step 2: Feature Preferences -->
+                <div class="matchmaker-stage" id="step2" style="display: none;">
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <div class="feature-icon">🎬</div>
+                            <div class="feature-title">Video Quality</div>
+                        </div>
+                        <div class="feature-question">How important is high-resolution video quality?</div>
+                        <div class="preference-options" data-feature="video">
+                            <div class="preference-option" data-value="essential">
+                                <div class="option-label">Essential</div>
+                                <div class="option-desc">We need the absolute best image quality available</div>
+                            </div>
+                            <div class="preference-option" data-value="important">
+                                <div class="option-label">Important</div>
+                                <div class="option-desc">High quality but not necessarily cutting-edge</div>
+                            </div>
+                            <div class="preference-option" data-value="moderate">
+                                <div class="option-label">Moderate</div>
+                                <div class="option-desc">Clear video is sufficient for our needs</div>
+                            </div>
+                            <div class="preference-option" data-value="minimal">
+                                <div class="option-label">Minimal</div>
+                                <div class="option-desc">Basic video capabilities will suffice</div>
+                            </div>
+                        </div>
+                        <div class="feature-progress">
+                            <div class="progress-text">Question 1 of 5</div>
+                            <div class="progress-dots">
+                                <div class="dot active"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="btn" id="step2-back" style="background: rgba(255,255,255,0.1); margin-right: 10px;">Back</button>
+                        <button type="button" class="btn" id="step2-next">Next: See Your Matches</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Results -->
+                <div class="matchmaker-stage" id="step3" style="display: none;">
+                    <div class="results-grid">
+                        <div class="main-result">
+                            <div class="match-badge">Top Match!</div>
+                            <img src="/api/placeholder/800/400" alt="Conference Room System" class="result-image">
+                            <div class="result-header">
+                                <h3 class="result-title">Premium Conference Room System</h3>
+                                <div class="match-percentage">92%</div>
+                            </div>
+                            <p class="result-description">A comprehensive solution perfect for your corporate space, featuring high-end video conferencing capabilities with premium audio quality and intuitive controls.</p>
+                            <div class="result-features">
+                                <h4>Key Features:</h4>
+                                <div class="feature-item">
+                                    <span class="feature-check">✓</span>
+                                    <span>4K video conferencing with adaptive camera tracking</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-check">✓</span>
+                                    <span>Integrated ceiling microphone array with noise cancellation</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-check">✓</span>
+                                    <span>One-touch meeting join from touchscreen interface</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-check">✓</span>
+                                    <span>Wireless content sharing from any device</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-check">✓</span>
+                                    <span>Fully automated room configurations (lighting, screens, audio)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="alternate-result">
+                            <div class="alt-result-header">
+                                <h3 class="alt-result-title">Hybrid Meeting Room Solution</h3>
+                                <div class="alt-match-percentage">85%</div>
+                            </div>
+                            <p class="alt-result-description">A balanced system focused on hybrid meetings with excellent remote participant experience and simplified operation.</p>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Dual screens for content and participants</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Voice-optimized audio system</span>
+                            </div>
+                        </div>
+                        <div class="alternate-result">
+                            <div class="alt-result-header">
+                                <h3 class="alt-result-title">Executive Presentation System</h3>
+                                <div class="alt-match-percentage">78%</div>
+                            </div>
+                            <p class="alt-result-description">An elegant solution focused on high-impact presentations with simplified controls and premium aesthetics.</p>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Ultra-bright projection system</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Discreet in-furniture connectivity</span>
+                            </div>
+                        </div>
+                    </div>
                     
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
+                    <div class="result-cta">
+                        <p>Want a detailed specification and budget breakdown for your recommended system?</p>
+                        <button type="button" class="btn" id="show-email-form">Get Your Personalized Report</button>
+                        
+                        <div class="email-form" id="email-form" style="display: none;">
+                            <h3 class="email-form-title">Get Your Personalized AV System Report</h3>
+                            <div class="email-inputs">
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" placeholder="Enter your name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Your Email</label>
+                                    <input type="email" id="email" placeholder="Enter your email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number (optional)</label>
+                                    <input type="tel" id="phone" placeholder="Enter your phone number">
+                                </div>
+                            </div>
+                            <button type="button" class="btn" id="submit-email">Send Me The Detailed Report</button>
+                            <p class="email-disclaimer">We'll email you a detailed PDF report with specifications, budget breakdown, and implementation guide for your recommended AV system.</p>
+                        </div>
+                    </div>
                     
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+                    <div class="form-buttons">
+                        <button type="button" class="btn" id="reset-matchmaker" style="background: rgba(255,255,255,0.1);">Start Over</button>
+                    </div>
+                </div>

@@ -101,7 +101,7 @@
             height: 100vh;
             display: flex;
             align-items: center;
-            background-image: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.9)), url('/api/placeholder/1400/800');
+            background-image: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.9)), url('images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -362,12 +362,50 @@
                 display: none;
             }
         }
+        
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--light-text);
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: var(--darker-bg);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.3s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="container">
         <a href="#" class="logo">SYSTEM DESIGNER UK</a>
+        <button class="mobile-menu-btn">☰</button>
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
@@ -433,28 +471,28 @@
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <img src="/api/placeholder/500/300" alt="Conference Center AV System" class="portfolio-img">
+                    <img src="images/portfolio-1.jpg" alt="Conference Center AV System" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3>Conference Center AV System</h3>
                         <p>Complete design and QSys programming for a multi-room conference facility.</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="/api/placeholder/500/300" alt="Corporate Auditorium" class="portfolio-img">
+                    <img src="images/portfolio-2.jpg" alt="Corporate Auditorium" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3>Corporate Auditorium</h3>
                         <p>Integrated media server and display control for executive presentations.</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="/api/placeholder/500/300" alt="Museum Audio Experience" class="portfolio-img">
+                    <img src="images/portfolio-3.jpg" alt="Museum Audio Experience" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3>Museum Audio Experience</h3>
                         <p>Interactive audio installations with synchronized control systems.</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="/api/placeholder/500/300" alt="Live Event Production" class="portfolio-img">
+                    <img src="images/portfolio-4.jpg" alt="Live Event Production" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3>Live Event Production</h3>
                         <p>Show control programming for a touring production with multiple media feeds.</p>
@@ -495,11 +533,11 @@
                     <p>Email: info@systemdesigneruk.com</p>
                     <p>Phone: +44 123 456 7890</p>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="text" placeholder="Subject">
-                    <textarea placeholder="Tell us about your project..." required></textarea>
+                <form class="contact-form" action="https://formspree.io/f/xeoeyaby" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject">
+                    <textarea name="message" placeholder="Tell us about your project..." required></textarea>
                     <button type="submit" class="btn">Send Message</button>
                 </form>
             </div>
@@ -550,7 +588,7 @@
     </footer>
 
     <script>
-        // Simple scroll effect for navigation
+        // Navigation scroll effect
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
@@ -558,6 +596,45 @@
             } else {
                 nav.classList.remove('nav-scrolled');
             }
+        });
+
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if the elements exist before adding event listeners
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+                
+                // Close mobile menu when clicking a link
+                const links = document.querySelectorAll('.nav-links a');
+                links.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                    });
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            const anchors = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+            anchors.forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>

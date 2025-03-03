@@ -794,805 +794,224 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Designer UK - Professional AV Solutions</title>
-    <style>
-        :root {
-            --primary-color: #00c2ff;
-            --secondary-color: #7000ff;
-            --dark-bg: #0c0c0c;
-            --darker-bg: #070707;
-            --light-text: #f5f5f5;
-            --medium-text: #a0a0a0;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-        
-        body {
-            background-color: var(--dark-bg);
-            color: var(--light-text);
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 0;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgba(7, 7, 7, 0.9);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-        
-        .nav-scrolled {
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 2.5rem;
-        }
-        
-        .nav-links a {
-            color: var(--light-text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .btn {
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            display: inline-block;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background-image: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.9)), url('images/hero-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--medium-text);
-            margin-bottom: 2rem;
-        }
-        
-        .highlight {
-            color: var(--primary-color);
-        }
-        
-        /* AV Matchmaker Lead Magnet */
-        .av-matchmaker {
-            padding: 5rem 0;
-            background-color: rgba(0, 194, 255, 0.05);
-            position: relative;
-        }
-        
-        .av-matchmaker::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAgMTBsMTAgMTBtLTEwIDQwbDEwIDEwbS01MCAwbDEwIDEwIiBzdHJva2U9InJnYmEoMCwxOTQsMjU1LDAuMDUpIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=');
-            opacity: 0.5;
-            z-index: 0;
-        }
-        
-        .av-matchmaker-content {
-            position: relative;
-            z-index: 1;
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .av-matchmaker h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .av-matchmaker p {
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            color: var(--medium-text);
-            font-size: 1.1rem;
-        }
-        
-        .matchmaker-card {
-            background-color: rgba(255, 255, 255, 0.03);
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-            max-width: 800px;
-            margin: 0 auto;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .matchmaker-stage {
-            display: none;
-        }
-        
-        .matchmaker-stage.active {
-            display: block;
-        }
-        
-        .matchmaker-intro {
-            text-align: center;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .form-group select,
-        .form-group input {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--light-text);
-            font-size: 1rem;
-        }
-        
-        .checkbox-group {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-        }
-        
-        .checkbox-item input[type="checkbox"] {
-            width: auto;
-            margin-right: 0.5rem;
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            margin-left: 1rem;
-        }
-        
-        .btn-outline:hover {
-            background: rgba(0, 194, 255, 0.1);
-        }
-        
-        .hero-buttons {
-            display: flex;
-            align-items: center;
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 8rem 0;
-            background-color: var(--darker-bg);
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 5rem;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .section-header p {
-            color: var(--medium-text);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .service-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            padding: 2rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-        
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .service-card p {
-            color: var(--medium-text);
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Service Category Headers */
-        .service-category {
-            margin: 3rem 0 1.5rem;
-            font-size: 1.8rem;
-            color: var(--light-text);
-        }
-        
-        /* Packages Section */
-        .packages {
-            padding: 8rem 0;
-            background-color: var(--dark-bg);
-        }
-        
-        .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .package-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .package-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-        
-        .package-card.featured {
-            border: 2px solid var(--primary-color);
-            position: relative;
-        }
-        
-        .package-header {
-            padding: 2rem;
-            background-color: rgba(255, 255, 255, 0.03);
-            text-align: center;
-        }
-        
-        .package-header h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.5rem;
-        }
-        
-        .package-price {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        .package-features {
-            list-style: none;
-            padding: 2rem;
-        }
-        
-        .package-features li {
-            margin-bottom: 0.8rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .package-features li:before {
-            content: "✓";
-            color: var(--primary-color);
-            position: absolute;
-            left: 0;
-        }
-        
-        .package-description {
-            padding: 0 2rem 1.5rem;
-            color: var(--medium-text);
-            font-size: 0.9rem;
-        }
-        
-        .package-card .btn {
-            margin: 0 2rem 2rem;
-            display: block;
-            text-align: center;
-        }
-        
-        /* Why Choose Us Section */
-        .why-us {
-            padding: 8rem 0;
-            background-color: var(--darker-bg);
-        }
-        
-        .why-us-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-        }
-        
-        .why-us-item {
-            text-align: center;
-        }
-        
-        .why-us-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .why-us-item h3 {
-            margin-bottom: 1rem;
-        }
-        
-        .why-us-item p {
-            color: var(--medium-text);
-        }
-        
-        /* Portfolio Section */
-        .portfolio {
-            padding: 8rem 0;
-        }
-        
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 2rem;
-        }
-        
-        .portfolio-item {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            height: 300px;
-            cursor: pointer;
-        }
-        
-        .portfolio-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .portfolio-item:hover .portfolio-img {
-            transform: scale(1.1);
-        }
-        
-        .portfolio-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 1.5rem;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-            transform: translateY(100%);
-            transition: transform 0.3s;
-        }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            transform: translateY(0);
-        }
-        
-        .portfolio-overlay h3 {
-            margin-bottom: 0.5rem;
-        }
-        
-        .portfolio-overlay p {
-            color: var(--medium-text);
-        }
-        
-        .portfolio-overlay a {
-            margin-top: 1rem;
-            display: inline-block;
-        }
-        
-        .btn-sm {
-            padding: 0.5rem 1rem;
-            font-size: 0.9rem;
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            padding: 8rem 0;
-            background-color: var(--darker-bg);
-        }
-        
-        .testimonial-slider {
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .testimonial {
-            text-align: center;
-            padding: 2rem;
-        }
-        
-        .testimonial p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-        }
-        
-        .testimonial-position {
-            color: var(--medium-text);
-            font-size: 0.9rem;
-        }
-        
-        /* Contact Section */
-        .contact {
-            padding: 8rem 0;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 4rem;
-        }
-        
-        .contact-info h3 {
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-info p {
-            color: var(--medium-text);
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-form select,
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            color: var(--light-text);
-        }
-        
-        .contact-form textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .consultation-cta {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-        }
-        
-        .consultation-cta h4 {
-            margin-bottom: 0.5rem;
-        }
-        
-        .consultation-cta p {
-            margin-bottom: 1rem;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--darker-bg);
-            padding: 4rem 0 2rem;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-column h3 {
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-links a {
-            color: var(--medium-text);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--medium-text);
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .btn-outline {
-                margin-left: 0;
-                margin-top: 1rem;
-            }
-        }
-        
-        /* Mobile Navigation */
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            color: var(--light-text);
-            cursor: pointer;
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 70%;
-                height: 100vh;
-                background-color: var(--darker-bg);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: left 0.3s ease;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 1.5rem 0;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="container">
-        <a href="#" class="logo">SYSTEM DESIGNER UK</a>
-        <button class="mobile-menu-btn">☰</button>
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#packages">Packages</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#" class="btn">Get Started</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
+    </section><!-- Services Section -->
+    <section id="services" class="services">
         <div class="container">
-            <div class="hero-content">
-                <h1>Premium <span class="highlight">Audio-Visual</span> System Design & Programming</h1>
-                <p>Specialized remote solutions for hybrid workplaces, immersive entertainment venues, and engaging events across the United Kingdom.</p>
-                <div class="hero-buttons">
-                    <a href="#services" class="btn">Explore Services</a>
-                    <a href="#contact" class="btn btn-outline">Request Consultation</a>
+            <div class="section-header">
+                <h2>Our <span class="highlight">Services</span></h2>
+                <p>We deliver specialized remote audio-visual solutions tailored to the evolving needs of UK businesses, entertainment venues, and event organizers.</p>
+            </div>
+            
+            <!-- Corporate Services -->
+            <h3 class="service-category">Corporate Solutions</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🖥️</div>
+                    <h3>Video Conferencing Rooms</h3>
+                    <p>Custom-designed Microsoft Teams and Zoom environments with premium audio-visual equipment for seamless hybrid meetings and collaboration.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Interactive Presentation Systems</h3>
+                    <p>High-impact presentation technologies with audience engagement tools, interactive displays, and live polling for corporate events and product launches.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Hybrid Event Production</h3>
+                    <p>Complete technical infrastructure for corporate events combining in-person and virtual attendance with seamless streaming integration.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Entertainment Venues -->
+            <h3 class="service-category">Entertainment & Themed Experiences</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎭</div>
+                    <h3>Immersive AV Experiences</h3>
+                    <p>Captivating themed environments with synchronized audio, visuals, lighting, and special effects that transport visitors into compelling story-driven spaces.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📽️</div>
+                    <h3>Projection Mapping Design</h3>
+                    <p>Transform ordinary surfaces into extraordinary visual displays with custom projection mapping for museums, exhibitions, and themed attractions.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👆</div>
+                    <h3>Interactive Exhibits</h3>
+                    <p>Engaging touch displays, spatial audio, and interactive media systems that create memorable visitor experiences in museums and brand activations.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Live Events -->
+            <h3 class="service-category">Live Events & Conferences</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎬</div>
+                    <h3>Full-Service AV Production</h3>
+                    <p>End-to-end technical design for staging, LED screens, concert-grade sound, and dynamic lighting for impactful events and conferences.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Audience Engagement Systems</h3>
+                    <p>Interactive tools including live polling, event apps, Q&A systems, and social media integration to maximize attendee participation.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📡</div>
+                    <h3>Live Streaming Integration</h3>
+                    <p>Professional broadcast-quality streaming solutions that extend your event's reach to virtual audiences with multi-camera setups and graphics.</p>
+                    <a href="#contact" class="btn">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- AV Matchmaker Lead Magnet -->
-    <section class="av-matchmaker">
+    
+    <!-- Service Packages Section -->
+    <section id="packages" class="packages">
         <div class="container">
-            <div class="av-matchmaker-content">
-                <h2>Find Your Perfect <span class="highlight">AV System</span> Match</h2>
-                <p>Not sure which AV solution is right for your space? Our intelligent matchmaker will analyze your needs and recommend the ideal system for your venue, budget, and requirements.</p>
-                
-                <div class="matchmaker-card">
-                    <div class="matchmaker-stage active" id="matchmaker-intro">
-                        <div class="matchmaker-intro">
-                            <h3>Tell us about your project</h3>
-                            <p>Answer a few questions to get personalized AV system recommendations</p>
-                        </div>
-                        
-                        <form id="matchmaker-form">
-                            <div class="form-group">
-                                <label for="venue-type">What type of venue is this for?</label>
-                                <select id="venue-type" required>
-                                    <option value="" disabled selected>Select venue type...</option>
-                                    <option value="Corporate">Corporate</option>
-                                    <option value="Education">Education</option>
-                                    <option value="Entertainment">Entertainment</option>
-                                    <option value="Hospitality">Hospitality</option>
-                                    <option value="Retail">Retail</option>
-                                    <option value="Healthcare">Healthcare</option>
-                                    <option value="House of Worship">House of Worship</option>
-                                    <option value="Government">Government</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="room-size">Room size/capacity?</label>
-                                <select id="room-size" required>
-                                    <option value="" disabled selected>Select room size...</option>
-                                    <option value="Small">Small (up to 10 people)</option>
-                                    <option value="Medium">Medium (11-30 people)</option>
-                                    <option value="Large">Large (31-100 people)</option>
-                                    <option value="Very Large">Very Large (100+ people)</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="budget">Approximate budget range?</label>
-                                <select id="budget" required>
-                                    <option value="" disabled selected>Select budget range...</option>
-                                    <option value="Budget">Budget-friendly (under £10,000)</option>
-                                    <option value="Mid-range">Mid-range (£10,000 - £30,000)</option>
-                                    <option value="Premium">Premium (£30,000 - £100,000)</option>
-                                    <option value="Enterprise">Enterprise (£100,000+)</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>How will the space be used? (Select all that apply)</label>
-                                <div class="checkbox-group">
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="usage-1" name="usage" value="Video conferencing">
-                                        <label for="usage-1">Video conferencing</label>
-                                    </div>
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="usage-2" name="usage" value="Presentations">
-                                        <label for="usage-2">Presentations</label>
-                                    </div>
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="usage-3" name="usage" value="Training">
-                                        <label for="usage-3">Training/Education</label>
-                                    </div>
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="usage-4" name="usage" value="Client meetings">
-                                        <label for="usage-4">Client-facing meetings</label>
-                                    </div>
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="usage-5" name="usage" value="Collaboration">
-                                        <label for="usage-5">Team collaboration</label>
-                                    </div>
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="usage-6" name="usage" value="Digital signage">
-                                        <label for="usage-6">Digital signage</label>
-                                    </div>
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="usage-7" name="usage" value="Live events">
-                                        <label for="usage-7">Live events</label>
-                                    </div>
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="usage-8" name="usage" value="Interactive">
-                                        <label for="usage-8">Interactive experiences</label>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <input type="email" placeholder="Your Email Address" required>
-                            </div>
-                            
-                            <button type="submit" class="btn" style="width: 100%;">Get Your AV System Recommendations</button>
-                        </form>
+            <div class="section-header">
+                <h2>Service <span class="highlight">Packages</span></h2>
+                <p>Choose the right level of support for your audio-visual needs with our flexible service options.</p>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>One-Off Project Package</h3>
+                        <div class="package-price">Fixed-scope engagements</div>
+                    </div>
+                    <ul class="package-features">
+                        <li>Comprehensive system design</li>
+                        <li>Detailed AutoCAD documentation</li>
+                        <li>Equipment specification</li>
+                        <li>Programming & configuration</li>
+                        <li>Project management</li>
+                        <li>Training & handover</li>
+                    </ul>
+                    <p class="package-description">Perfect for new installations, upgrades, or one-time event production needs with clear deliverables and timeline.</p>
+                    <a href="#contact" class="btn">Request Quote</a>
+                </div>
+                <div class="package-card featured">
+                    <div class="package-header">
+                        <h3>Ongoing Consultancy</h3>
+                        <div class="package-price">From £450/day</div>
+                    </div>
+                    <ul class="package-features">
+                        <li>Retained AV expertise</li>
+                        <li>Priority technical support</li>
+                        <li>Regular system health checks</li>
+                        <li>Staff training sessions</li>
+                        <li>Future-proofing guidance</li>
+                        <li>Quarterly review meetings</li>
+                    </ul>
+                    <p class="package-description">Ideal for organizations requiring continuous AV expertise with predictable access to professional support.</p>
+                    <a href="#contact" class="btn">Request Quote</a>
+                </div>
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>AV-as-a-Service</h3>
+                        <div class="package-price">Monthly subscription</div>
+                    </div>
+                    <ul class="package-features">
+                        <li>Equipment provision</li>
+                        <li>Regular technology refreshes</li>
+                        <li>Remote monitoring</li>
+                        <li>Helpdesk support</li>
+                        <li>Software updates</li>
+                        <li>Preventative maintenance</li>
+                    </ul>
+                    <p class="package-description">Converts capital expenditure to operational costs with the latest technology always at your fingertips.</p>
+                    <a href="#contact" class="btn">Request Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose <span class="highlight">System Designer UK</span></h2>
+                <p>Specialized expertise delivered remotely with the same quality as on-site consultation.</p>
+            </div>
+            <div class="why-us-grid">
+                <div class="why-us-item">
+                    <div class="why-us-icon">🎯</div>
+                    <h3>Specialized Expertise</h3>
+                    <p>Our team focuses exclusively on AV system design and programming, ensuring you get specialized knowledge rather than generalist solutions.</p>
+                </div>
+                <div class="why-us-item">
+                    <div class="why-us-icon">💻</div>
+                    <h3>Remote Efficiency</h3>
+                    <p>Our streamlined remote workflow reduces travel costs and accelerates project timelines without compromising quality or communication.</p>
+                </div>
+                <div class="why-us-item">
+                    <div class="why-us-icon">🤝</div>
+                    <h3>Vendor Independence</h3>
+                    <p>As independent consultants, we recommend the best solutions for your needs without being tied to specific manufacturers or products.</p>
+                </div>
+                <div class="why-us-item">
+                    <div class="why-us-icon">📈</div>
+                    <h3>Proven ROI</h3>
+                    <p>Our clients experience reduced downtime, improved user adoption, and enhanced experiences that deliver measurable return on investment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span class="highlight">Portfolio</span></h2>
+                <p>Explore our recent projects showcasing our expertise in cutting-edge audio-visual solutions across the UK.</p>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Corporate Case Study -->
+                <div class="portfolio-item">
+                    <img src="images/portfolio-1.jpg" alt="London Financial Firm Hybrid Meeting Spaces" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>London Financial Firm</h3>
+                        <p>Designed and implemented 12 Microsoft Teams Rooms with premium audio and dual displays, supporting the firm's hybrid work strategy.</p>
+                        <a href="#" class="btn btn-sm">View Case Study</a>
+                    </div>
+                </div>
+                <!-- Entertainment Venue Case Study -->
+                <div class="portfolio-item">
+                    <img src="images/portfolio-2.jpg" alt="Interactive Museum Exhibition" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Natural History Museum Exhibition</h3>
+                        <p>Created an immersive audio-visual experience with synchronized projection mapping and interactive touch displays.</p>
+                        <a href="#" class="btn btn-sm">View Case Study</a>
+                    </div>
+                </div>
+                <!-- Corporate Event Case Study -->
+                <div class="portfolio-item">
+                    <img src="images/portfolio-3.jpg" alt="Annual Shareholder Meeting" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Tech Company Annual Meeting</h3>
+                        <p>Delivered a hybrid event solution with live polling, Q&A systems, and seamless streaming to global virtual attendees.</p>
+                        <a href="#" class="btn btn-sm">View Case Study</a>
+                    </div>
+                </div>
+                <!-- Themed Entertainment Case Study -->
+                <div class="portfolio-item">
+                    <img src="images/portfolio-4.jpg" alt="Themed Entertainment Experience" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>UK Theme Park Attraction</h3>
+                        <p>Designed show control systems for a new themed attraction with synchronized audio, lighting, and special effects.</p>
+                        <a href="#" class="btn btn-sm">View Case Study</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Testimonials Section -->
+    </section><!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header">
